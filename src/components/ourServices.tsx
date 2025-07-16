@@ -6,7 +6,7 @@ import ButtonWithIcon from "@/components/common/buttonWithIcon";
 import ServicesCard from "./servicesCard";
 
 // assets
-import {register, success, church, businessName, calendar, training, upgrade, world, business} from '@/assets/images'
+import {register, success, church, businessName, calendar, training, upgrade, world, business, clippedBrandIcon} from '@/assets/images'
 
 
 
@@ -68,8 +68,14 @@ const OurServices = ({className}:OurServicesProps)=>{
         <div className="flex justify-center">
             <ButtonWithIcon className=" my-5 lg:my-10 bg-background text-white align-center" />
         </div>
-        <div className="overflow-hidden w-full max-w-[1140px] rounded-xl max-h-[655px]">
-            <img src={business} alt='three people sitted at a table, with teacups, discussing while looking at a laptop.'  className="w-full mx-auto hover:scale-110 transition-transform duration-300 rounded-xl"/>
+        <div className="relative overflow-hidden w-full max-w-[1140px] mx-auto max-h-[655px] rounded-xl border-12 border-white">
+          <img src={clippedBrandIcon} alt=""  className="absolute top-0 left-0" />
+          <img 
+            src={business} 
+            alt='three people sitted at a table, with teacups, discussing while looking at a laptop.'  
+            className="w-full mx-auto rounded-xl  group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="hero-modal shrink-0 absolute top-0 left-0 w-full h-full bg-top bg-[linear-gradient(to_bottom,#00000000,#12241360_87%)] rounded-xl"></div>
         </div>   
     </CustomDiv>
 }
