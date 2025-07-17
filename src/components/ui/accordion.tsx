@@ -1,8 +1,8 @@
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDownIcon } from "lucide-react"
-
+import {plus, minus} from '@/assets/images'
 import { cn } from "@/lib/utils"
+
 
 function Accordion({
   ...props
@@ -28,8 +28,9 @@ function AccordionTrigger({
   children,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+  const [isClicked, setIsClicked] = React.useState(false)
   return (
-    <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Header className="flex" onClick={()=>setIsClicked(prev=>!prev)} onBlur={()=>setIsClicked(false)}>
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
@@ -39,7 +40,8 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+        {/* <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" /> */}
+        <img src={isClicked? minus : plus} className={`${isClicked? 'h-6 w-5' :'w-3 md:w-[14px]'} `} />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

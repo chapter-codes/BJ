@@ -25,3 +25,17 @@ export { default as fast } from './fast.svg'
 export { default as user } from './user.svg'
 export { default as good } from './good.svg'
 export { default as dollar } from './dollar.svg'
+
+
+// accordion
+export { default as plus } from './plus.svg'
+export { default as minus } from './minus.svg'
+
+
+// simplerating
+export { default as star } from './star.svg'
+
+// whatOurCustomersSay
+export { default as testimonial1 } from './testimonial1.png'
+export { default as testimonial2 } from './testimonial2.png'
+

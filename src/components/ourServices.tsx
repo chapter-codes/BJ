@@ -69,13 +69,13 @@ const OurServices = ({className}:OurServicesProps)=>{
             <ButtonWithIcon className=" my-5 lg:my-10 bg-background text-white align-center" />
         </div>
         <div className="relative overflow-hidden w-full max-w-[1140px] mx-auto max-h-[655px] rounded-xl border-12 border-white">
-          <img src={clippedBrandIcon} alt=""  className="absolute top-0 left-0" />
+          <img src={clippedBrandIcon} alt=""  className="absolute top-0 left-0 rounded-tl-xl" />
           <img 
             src={business} 
             alt='three people sitted at a table, with teacups, discussing while looking at a laptop.'  
-            className="w-full mx-auto rounded-xl  group-hover:scale-105 transition-transform duration-300"
+            className="w-full mx-auto rounded-xl overflow-hidden  group-hover:scale-105 transition-transform duration-300"
           />
-          <div className="hero-modal shrink-0 absolute top-0 left-0 w-full h-full bg-top bg-[linear-gradient(to_bottom,#00000000,#12241360_87%)] rounded-xl"></div>
+          <div className="hero-modal shrink-0 absolute top-0 left-0 w-full h-full bg-top bg-[linear-gradient(to_bottom,#00000000,#12241380_87%)] rounded-xl overflow-hidden"></div>
         </div>   
     </CustomDiv>
 }

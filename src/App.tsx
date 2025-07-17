@@ -3,6 +3,7 @@ import HeroSection from '@/components/heroSection';
 import OurServices from '@/components/ourServices';
 import WhyChooseOurBrand from '@/components/whyChooseOurBrand'
 import FAQs from '@/components/FAQs';
+import WhatOurClientsSay from '@/components/whatOurClientsSay';
 
 const App = ()=>{
   return <div className="">
@@ -12,6 +13,7 @@ const App = ()=>{
       <OurServices className='' />
       <WhyChooseOurBrand />
       <FAQs />
+      <WhatOurClientsSay />
       
 
     </div>

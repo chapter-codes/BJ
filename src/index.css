@@ -15,6 +15,10 @@
   --color-bg-2: var(--primary-background);
   --color-foreground: var(--foreground);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-carousel-btn-border:#94949480;
+  --color-carousel-control-color:#6B7280;
+
+
   --color-hover:var(--hover);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -51,6 +55,7 @@
 
   /* fonts */
   --font-poppins: 'Poppins', sans-serif;
+  --font-mulish: 'Mulish', sans-serif;
 
   /* image */
   /* --color-hero-bg: url('./') */
