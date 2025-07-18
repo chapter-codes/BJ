@@ -33,7 +33,7 @@ export { default as minus } from './minus.svg'
 
 
 // simplerating
-export { default as star } from './star.svg'
+// export { default as star } from './star.svg'
 
 // whatOurCustomersSay
 export { default as testimonial1 } from './testimonial1.png'
