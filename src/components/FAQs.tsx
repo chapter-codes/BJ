@@ -53,7 +53,7 @@ const faqs = [
 ];
 
 function FAQs() {
-    return <CustomDiv className="pt-4">
+    return <CustomDiv id='faqs' className="pt-4">
         <SectionDescription section="Frequently Asked Questions" description="Find answers to common questions below" />
         <div className="flex justify-center bg-white mt-10 py-6 lg:py-10 px-6 rounded-4xl">
             <Accordion type="single" collapsible className="faq lg:min-w-[720px]">

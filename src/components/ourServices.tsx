@@ -25,7 +25,7 @@ const services = [
     icon:  <img src={register} className="" />
   },
   {
-    "serviceType": "NGO/Church/Mosque Registration",
+    "serviceType": `NGO/Church/<br>Mosque Registration`,
     "shortDescription": "Specialized registration services for non-profit organizations",
     icon:    <img src={church} className="" />
   },
@@ -57,16 +57,16 @@ const services = [
 ]
 
 const OurServices = ({className}:OurServicesProps)=>{
-    return <CustomDiv className={` ${className}`}>
+    return <CustomDiv id="services" className={` ${className} `}>
         <SectionDescription 
             section="our services"
             description="We offer comprehensive business registration solutions"
         />
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-3 sm:gap-5 mt-4">
             {services.map(service=> <ServicesCard key={service.serviceType} service={service} />)}
         </div>
         <div className="flex justify-center">
-            <ButtonWithIcon className=" my-5 lg:my-10 bg-background text-white align-center" />
+            <ButtonWithIcon className=" my-5 my- lg:my-12 bg-background text-white align-center" />
         </div>
         <div className="relative overflow-hidden w-full max-w-[1140px] mx-auto max-h-[655px] rounded-xl border-12 border-white">
           <img src={clippedBrandIcon} alt=""  className="absolute top-0 left-0 rounded-tl-xl" />

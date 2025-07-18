@@ -31,7 +31,7 @@ const reasons=[
 ]
 
 function whyChooseOurBrand() {
-  return <CustomDiv className='mt-10 lg:mt-32 mb-10 lg:mb-20'>
+  return <CustomDiv id='about' className='mt-10 lg:mt-32 mb-10 lg:mb-20'>
         <SectionDescription 
             section='why choose our brand?'
             description='At BeeJayTech, we guide you through every step of CAC registration, making the process fast, simple, and stress-free.'

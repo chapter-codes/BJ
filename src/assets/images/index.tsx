@@ -39,3 +39,6 @@ export { default as star } from './star.svg'
 export { default as testimonial1 } from './testimonial1.png'
 export { default as testimonial2 } from './testimonial2.png'
 
+// footer
+export { default as instagram } from './instagram.svg'
+export { default as facebook } from './facebook.svg'

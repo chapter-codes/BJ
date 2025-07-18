@@ -85,7 +85,7 @@ export function CustomCarousel() {
 function WhatOurClientsSay() {
   return (
     <CustomDiv className="mt-30">
-      <SectionDescription section="whatour clients say" description="Hear from businesses we've helped register."/>
+      <SectionDescription section="what our clients say" description="Hear from businesses we've helped register."/>
         <CustomCarousel />
     </CustomDiv>
   )

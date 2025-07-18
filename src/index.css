@@ -13,6 +13,10 @@
   --color-tertiary-background: var(--tertiary-background);
   --color-background-4: var(--background-4);
   --color-bg-2: var(--primary-background);
+  --color-footer-background: var(--footer-background);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-footer-divider-background: var(--footer-divider-background);
+
   --color-foreground: var(--foreground);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-carousel-btn-border:#94949480;
@@ -62,6 +66,9 @@
 }
 
 :root {
+  /* font size */
+  font-size:87.5%;
+
   --radius: 0.625rem;
   --background: #1D3F20;
   --primary-background: #147D1E;
@@ -70,6 +77,11 @@
   --background-4:#F6F6F8;
   --foreground: #1D3F20;
   --secondary-foreground: #535A6E;
+  --footer-background:#1E1E1E;
+  --footer-foreground:#9BABBA;
+  --footer-divider-background: #2C2C2C;
+
+
   --hover: black;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -100,7 +112,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --header-height:80px;
+  --header-height:70px;
 }
 
 .dark {
@@ -141,10 +153,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html{
+    @apply scroll-smooth scroll-mt-header
+  }
   body {
-    @apply  text-foreground font-poppins bg-white;
+    @apply  text-foreground font-poppins bg-white ;
   }
   .faq a{
-  @apply underline
+   @apply underline
+  }
+
+ 
 }
+
+:root {
+    -size: 87.5%; /* 14px equivalent (16px × 0.875) */
+}
+@media (min-width: 768px) {
+  :root {
+    font-size: 100%; /* 16px equivalent */
+  }
 }
