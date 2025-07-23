@@ -42,3 +42,9 @@ export { default as testimonial2 } from './testimonial2.png'
 // footer
 export { default as instagram } from './instagram.svg'
 export { default as facebook } from './facebook.svg'
+
+
+// review 
+export { default as reviewImage1 } from './review-image-1.png'
+export { default as reviewImage2 } from './review-image-2.png'
+export { default as reviewImage3 } from './review-image-3.png'

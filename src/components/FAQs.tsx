@@ -55,7 +55,15 @@ const faqs = [
 function FAQs() {
     return <CustomDiv id='faqs' className="pt-4">
         <SectionDescription section="Frequently Asked Questions" description="Find answers to common questions below" />
-        <div className="flex justify-center bg-white mt-10 py-6 lg:py-10 px-6 rounded-4xl">
+        <CustomDiv 
+          plainDiv={true} 
+          className="flex justify-center bg-white mt-10 py-6 lg:py-10 px-6 rounded-4xl"
+          motionProps={{
+            initial:{y:150},
+            whileInView:{y:0},
+            transition:{duration: 0.4}
+          }}
+          >
             <Accordion type="single" collapsible className="faq lg:min-w-[720px]">
                 {faqs.map(faq=>
                     <AccordionItem value={faq.question} key={faq.question} className="text-3xl text-secondary-foreground  border-none mb-4 w-full max-w-[720px]">
@@ -66,7 +74,7 @@ function FAQs() {
                     </AccordionItem>
                 )}   
             </Accordion>
-        </div>
+        </CustomDiv>
     </CustomDiv>
 }
 

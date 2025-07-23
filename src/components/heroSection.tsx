@@ -10,7 +10,7 @@ type HeroSectionProps = {
 }
 const HeroSection = ({loadState}:HeroSectionProps)=>{
     const {isLoaded, setIsLoaded} = loadState
-    return <div className="relative flex items-center justify-center text-white w-full h-[400px] lg:h-[calc(100svh-var(--header-height))] max-h-[1000px] bg-cover bg-center bg-no-repeat ">
+    return <div id='hero' className="relative flex items-center justify-center text-white w-full h-[400px] sm:h-[600px] lg:h-[calc(100svh-var(--header-height))] max-h-[1000px] bg-cover bg-center bg-no-repeat ">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
             <img src={hero} 
                 alt="" 
@@ -27,7 +27,7 @@ const HeroSection = ({loadState}:HeroSectionProps)=>{
             </h1>
             <p className={` text-sm sm:text-base text-center md:max-w-[700px]  max-w-[300px] mt-0.5 relative transition-opacity duration-[1200ms] delay-700 ${isLoaded?'opacity-100': 'opacity-0'} `}>Register your business in Nigeria, the US, or the UK with ease — build legal confidence, protect your brand, and access growth opportunities with BeeJayTech.</p>
             <div className={`relative delay-1000 duration-1000 transition-transform ${isLoaded? 'translate-y-0': 'translate-y-[300px]'} `}>
-                <ButtonWithIcon className={`max-w-fit mt-6`} />
+                <ButtonWithIcon className={`max-w-fit mt-6`} animate={true}/>
             </div>
         </CustomDiv>
     </div>

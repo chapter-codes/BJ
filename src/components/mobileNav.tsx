@@ -16,7 +16,7 @@ function MobileNav({links}:{links:string[]}){
             <DropdownMenuTrigger>
                 <SquareMenu color={'#C39A2D'} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="mt-3 mr-2">
+            <DropdownMenuContent className="text-base mt-3 mr-2">
                 <DropdownMenuLabel>Navigation</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                         { links.map(link=> 

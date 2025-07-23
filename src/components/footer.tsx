@@ -31,8 +31,8 @@ function Footer() {
             <div id="contact" className="lg:basis-[30%] flex flex-col items-center lg:items-start gap-1">
                 <h2 className="mb-4 text-white text-base md:text-xl font-semibold">Contact</h2>
                 <ul className="flex flex-col gap-3">
-                    <li className="flex hover:text-secondary-background transition-[color] duration-300"><Phone color="#C39A2D"/> <a href="tel:+2349059414563">+234 905 941 4563</a> </li>
-                    <li className="flex hover:text-secondary-background transition-[color] duration-300"><Mail color="#C39A2D"/> <a href="tel:+2349059414563">+234 905 941 4563</a> </li>
+                    <li className="flex hover:text-secondary-background transition-[color] duration-300"><Phone color="#C39A2D"/> <a href="tel:+2349059414563" className="pl-1">+234 905 941 4563</a> </li>
+                    <li className="flex hover:text-secondary-background transition-[color] duration-300"><Mail color="#C39A2D"/> <a href="mailto:beejaytechy@gmail.com" className="pl-1">beejaytechy@gmail.com</a> </li>
                 </ul>
             </div>
             <div className="lg:basis-[30%] flex flex-col gap-1">
@@ -46,7 +46,7 @@ function Footer() {
             </div>
       </CustomDiv>
       <div className='w-full h-[1px] bg-footer-divider-background  mt-10 lg:mt-32'></div>
-      <p className="text-sm md:text-base text-center w-full max-w-[200px] md:max-w-full mx-auto mt-4">© 2025 BeeJayTech Brand. All rights reserved.</p>
+      <p className="text-sm md:text-base text-center w-full max-w-[200px] md:max-w-full mx-auto mt-4">© 2025 BeeJayTech. All rights reserved.</p>
     </div>
   )
 }

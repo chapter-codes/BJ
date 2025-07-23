@@ -8,9 +8,10 @@ export interface SimpleRatingPropType{
     onClick?: (rating:number)=>void;
     size?: number;
     readonly?: boolean
-    className?: string
+    className?: string,
+    iconClass?: string
 }
-const SimpleRating = ({name, rating, onClick, size=30, readonly=false, className=''}:SimpleRatingPropType)=>{
+const SimpleRating = ({name, rating, onClick, size=30, readonly=false, className='', iconClass=''}:SimpleRatingPropType)=>{
     const fullStarClass = 'material-symbols:star-rounded'
     const halfStarClass = 'clarity:half-star-solid'
     const emptyStarClass = 'si:star-alt-line'
@@ -48,12 +49,14 @@ const SimpleRating = ({name, rating, onClick, size=30, readonly=false, className
     return(
        <div className={`flex items-center ${className}`} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} onClick={handleClick}>
             {[1,2,3,4,5].map((i) => 
-                <button className={`star-icon icon-${i}`} key={`${name + i}`}>
+                <button className={`star-icon icon-${i} ${iconClass}`} key={`${name + i}`} >
                     <Icon 
                         icon={i <= ratingState.rating ? fullStarClass : (i - 0.5) <= ratingState.rating ? halfStarClass : emptyStarClass} 
                         color={i <= ratingState.rating ? ratingIconFullColor: (i - 0.5) <= ratingState.rating ? ratingIconHalfColor: ratingIconEmptyColor} 
                         height={i <= ratingState.rating ? size : (i - 0.5) <= ratingState.rating ? 0.74*size : 0.8*size} 
                         width={size}
+                        // className={`w-[${size}px] h-[${i <= ratingState.rating ? size : (i - 0.5) <= ratingState.rating ? 0.74*size : 0.8*size}px]
+                        // `}
                     />
                 </button>
             )}

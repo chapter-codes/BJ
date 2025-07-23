@@ -6,7 +6,7 @@ import MobileNav from "@/components/mobileNav"
 const Header = ()=>{
     const links =['about', 'services', 'FAQS', 'contact']
 
-    return <header className="h-header text-white flex items-center bg-background w-full sticky top-0 z-10 ">
+    return <header className="h-header text-white flex items-center bg-background w-full sticky top-0 z-100 ">
         <div className="flex justify-between items-center gap-4 w-[95%] lg:w-4/5 max-w-[1440px] mx-auto ">
             {/* logo */}
             <img src={pageLogo} alt="beejaytech logo." className="w-20" />

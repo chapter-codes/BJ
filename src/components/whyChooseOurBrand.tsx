@@ -37,7 +37,7 @@ function whyChooseOurBrand() {
             description='At BeeJayTech, we guide you through every step of CAC registration, making the process fast, simple, and stress-free.'
         />
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-5">
-            {reasons.map(reason=> <ServicesCard key={reason.title} service={{...reason, serviceType:reason.title}} />)}
+            {reasons.map(reason=> <ServicesCard key={reason.title} service={{...reason, serviceType:reason.title, showButton:false}} />)}
         </div>
     </CustomDiv>
 }
