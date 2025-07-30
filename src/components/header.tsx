@@ -14,7 +14,7 @@ const Header = ()=>{
             <nav className="hidden sm:flex justify-center gap-2">
                 <ul className="flex justify-center gap-4">
                     { links.map(link=> 
-                        <li className="capitalize hover:text-secondary-background transition-[color] duration-300" key={link}> 
+                        <li className="capitalize hover:text-secondary-background active:text-secondary-background  transition-[color] duration-300" key={link}> 
                             <a href={`#${link=="FAQS"?'faqs': link}`}>{link}</a> 
                         </li>
                     )}

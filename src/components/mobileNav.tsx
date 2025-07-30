@@ -2,8 +2,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -16,11 +14,13 @@ function MobileNav({links}:{links:string[]}){
             <DropdownMenuTrigger>
                 <SquareMenu color={'#C39A2D'} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="text-base mt-3 mr-2">
-                <DropdownMenuLabel>Navigation</DropdownMenuLabel>
-                <DropdownMenuSeparator />
+            <DropdownMenuContent className="sm:hidden w-dvw  relative right-0 top-3 text-base mt-3 mr- flex gap-2 justify-center items-center px-2 py-4 rounded-none">
+                {/* <DropdownMenuLabel>Navigation</DropdownMenuLabel> */}
+                <div className="">
+
+                </div>
                         { links.map(link=> 
-                            <DropdownMenuItem className="capitalize hover:text-secondary-background transition-[color] duration-300" key={link}> 
+                            <DropdownMenuItem className="capitalize hover:text-secondary-background active:text-secondary-background transition-[color] duration-300" key={link}> 
                                     <a href={`#${link=="FAQS"?'faqs': link}`}>{link}</a> 
                             </DropdownMenuItem>
                         )}

@@ -53,7 +53,7 @@ const faqs = [
 ];
 
 function FAQs() {
-    return <CustomDiv id='faqs' className="pt-4">
+    return <CustomDiv id='faqs' className="">
         <SectionDescription section="Frequently Asked Questions" description="Find answers to common questions below" />
         <CustomDiv 
           plainDiv={true} 
