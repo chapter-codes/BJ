@@ -16,6 +16,14 @@
   --color-footer-background: var(--footer-background);
   --color-footer-foreground: var(--footer-foreground);
   --color-footer-divider-background: var(--footer-divider-background);
+  --color-service-border: var(--service-border);
+  --color-progress-bar-background: var(--progress-bar-background);
+  --color-price-background: var(--price-background);
+  --color-business-type-background: var(--business-type-background);
+  --color-business-type-border: var(--business-type-border);
+  --color-disabled-btn: var(--disabled-btn);
+  --color-disabled-previous-btn: var(--disabled-previous-btn);
+  --color-disabled-btn-border: var(--disabled-btn-border);
 
   --color-foreground: var(--foreground);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -80,6 +88,14 @@
   --footer-background:#1E1E1E;
   --footer-foreground:#9BABBA;
   --footer-divider-background: #2C2C2C;
+  --service-border: #E5E7EB;
+  --progress-bar-background: #E9E9E9;
+  --price-background:#F4F4F5;
+  --business-type-background:#F9FFF9;
+  --business-type-border:#147D1E;
+  --disabled-btn:#F5F5F5;
+  --disabled-previous-btn:#C1C3C4;
+  --disabled-btn-border:#656E7A33;
 
 
   --hover: black;

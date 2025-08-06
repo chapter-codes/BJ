@@ -48,3 +48,7 @@ export { default as facebook } from './facebook.svg'
 export { default as reviewImage1 } from './review-image-1.png'
 export { default as reviewImage2 } from './review-image-2.png'
 export { default as reviewImage3 } from './review-image-3.png'
+
+
+// service
+export { default as backArrow } from './backArrow.svg'
