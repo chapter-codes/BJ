@@ -6,7 +6,7 @@ import { instagram, facebook } from "@/assets/images"
 
 function Footer() {
   return (
-    <div className='bg-footer-background text-footer-foreground w-full py-12 lg:py-24'>
+    <div id="contact" className='bg-footer-background text-footer-foreground w-full py-12 lg:py-24 scroll-mt-[calc(var(--header-height)+1rem)]'>
       <CustomDiv className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 items-center lg:items-start">
             <div className="shrink-0 lg:basis-[40%] flex lg:flex-col justify-between items-center lg:items-start gap-12 lg:gap-0 w h-[110px]">
                 <img src={pageLogo} alt="beejaytech logo" className="w-23" />
@@ -28,7 +28,7 @@ function Footer() {
                         </li>
                     </ul>
             </div>
-            <div id="contact" className="lg:basis-[30%] flex flex-col items-center lg:items-start gap-1">
+            <div id="" className="lg:basis-[30%] flex flex-col items-center lg:items-start gap-1">
                 <h2 className="mb-4 text-white text-base md:text-xl font-semibold">Contact</h2>
                 <ul className="flex flex-col gap-3">
                     <li className="flex hover:text-secondary-background active:text-secondary-background transition-[color] duration-300"><Phone color="#C39A2D"/> <a href="tel:+2349059414563" className="pl-1">+234 905 941 4563</a> </li>

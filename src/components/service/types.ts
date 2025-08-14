@@ -1,7 +1,8 @@
-export type Service ={
+export type ServiceWithPrice ={
   title: string;
   description: string;
   price: number;
+  link:string
 };
 
-export type Services = Service[]
+export type ServicesWithPrice = ServiceWithPrice[]

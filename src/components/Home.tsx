@@ -14,6 +14,7 @@ function Home() {
     const {loading} = useLoading()
 
     useEffect(()=>{
+        
         if(loading){
             window.document.body.style.overflow = 'hidden'
         }else{

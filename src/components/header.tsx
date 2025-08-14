@@ -1,12 +1,11 @@
 import { pageLogo } from "@/assets/images"
-import {Button} from '@/components/ui/button'
 import MobileNav from "@/components/mobileNav"
-import { Link, useLocation } from "react-router"
+import { Link,  } from "react-router"
+import ButtonLink from '@/components/common/buttonLink'
 
 
 const Header = ()=>{
     const links =['about', 'services', 'FAQS', 'contact']
-    const location = useLocation()
 
     return <header className="h-header text-white flex items-center bg-background w-full sticky top-0 z-100 ">
         <div className="flex justify-between items-center gap-4 w-[95%] lg:w-4/5 max-w-[1440px] mx-auto ">
@@ -26,13 +25,7 @@ const Header = ()=>{
             </nav>
             {/*  */}
             <div className="flex items-center gap-4">
-                <Button className="text-foreground" asChild>
-                    <Link to={'/services'} 
-                      state={{ backgroundLocation: location }}
-                     >
-                        Get started Now
-                    </Link>
-                </Button>
+                <ButtonLink />
                 <nav className="sm:hidden">
                     <MobileNav links={links} />
                 </nav>
