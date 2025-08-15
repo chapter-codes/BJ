@@ -32,7 +32,7 @@ function ChooseService({step, setStep, services}:ChooseService) {
     console.log('stepcom', stepCompleted)
     console.log('step', step)
   return (
-    <div className='basis-2/ text-foreground bg-white rounded-xl border border-service-border mt-4 max-w-[731px] px-4 md:px-10 py-6 md:py-10'>
+    <div className='md:basis-2/3 text-foreground bg-white rounded-xl border border-service-border max-w-[731px] px-4 md:px-10 py-6 md:py-10'>
         <h3 className='text-lg  font-semibold  capitalize'>choose your service</h3>
         <p className="text-base text-secondary-foreground mt-1 ">Select the type of registration service you need</p>
         
@@ -47,7 +47,7 @@ function ChooseService({step, setStep, services}:ChooseService) {
                         <p className="text-secondary-foreground texx-base mt-6 md:mt-2">{service.description}</p>
                     </div>
                     <div className="absolute md:relative top-2 md:top-0 right-2 md:right-0 flex justify-center  text-lg font-semibold bg-price-background border rounded-full px-4 py-2 md:min-w-[120px]">
-                        #{service.price}
+                    ₦{service.price}
                     </div>    
             </Link>
         )}

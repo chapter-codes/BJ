@@ -7,10 +7,12 @@ import { backArrow, pageLogoDarkText } from "@/assets/images"
 import { servicesWithPrice } from "@/lib/data"
 
 import CustomDiv from "@/components/common/customDiv"
-import ChooseService from "@/components/chooseService"
+import ChooseService from "@/components/service/chooseService"
 import Footer from "@/components/footer"
 
 import type {ServiceWithPrice} from '@/components/service/types'
+import PriceSummary from "@/components/service/priceSummary"
+import NeedHelp from "@/components/service/needHelp"
 
 type ServiceProps ={
   fullServiceList:boolean
@@ -47,7 +49,7 @@ function Service( {fullServiceList}:ServiceProps) {
       >
         <div className=" bg-tertiary-background">
           <CustomDiv className="mb-0! pb-20">
-            <div className="sticky z-[4000] top-0 py-4 bg-tertiary-background">
+            <div id='sticky-header' className="sticky z-[4000] top-0 py-4 bg-tertiary-background pb-10">
               <div className="flex justify-between items-center w-full">
                 <h2 className="text-foreground text-xl font-semibold ">Get Started</h2>
                 <img src={pageLogoDarkText} alt="Beejaytech Logo." />
@@ -76,12 +78,17 @@ function Service( {fullServiceList}:ServiceProps) {
               </button>    
             </div>
 
-            <div className="md:flex mt-10">
+            <div className="flex flex-col md:flex-row items-start md:justify-evenly gap-6">
               <ChooseService  
                 services = {fullServiceList? servicesWithPrice :[foundService] } 
                 step={step} 
                 setStep={setStep} 
               />
+              <div className="flex flex-col gap-4">
+                {!fullServiceList && <PriceSummary price={foundService.price} />}
+                <NeedHelp />
+              </div>
+
             </div>
           </CustomDiv>
         <Footer />

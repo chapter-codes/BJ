@@ -53,3 +53,4 @@ export { default as reviewImage3 } from './review-image-3.png'
 
 // service
 export { default as backArrow } from './backArrow.svg'
+export { default as whatsApp } from './WhatsApp.svg'

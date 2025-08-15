@@ -12,6 +12,7 @@
   --color-secondary-background: var(--secondary-background);
   --color-tertiary-background: var(--tertiary-background);
   --color-background-4: var(--background-4);
+  --color-background-5: var(--background-5);
   --color-bg-2: var(--primary-background);
   --color-footer-background: var(--footer-background);
   --color-footer-foreground: var(--footer-foreground);
@@ -83,6 +84,7 @@
   --secondary-background:#C39A2D;
   --tertiary-background: #F9FAFB;
   --background-4:#F6F6F8;
+  --background-5:#E1FFE4;
   --foreground: #1D3F20;
   --secondary-foreground: #535A6E;
   --footer-background:#1E1E1E;
