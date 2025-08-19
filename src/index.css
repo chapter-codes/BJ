@@ -15,6 +15,7 @@
   --color-background-5: var(--background-5);
   --color-bg-2: var(--primary-background);
   --color-footer-background: var(--footer-background);
+  --color-placeholder-foreground: var(--placeholder-foreground);
   --color-footer-foreground: var(--footer-foreground);
   --color-footer-divider-background: var(--footer-divider-background);
   --color-service-border: var(--service-border);
@@ -87,8 +88,9 @@
   --background-5:#E1FFE4;
   --foreground: #1D3F20;
   --secondary-foreground: #535A6E;
-  --footer-background:#1E1E1E;
   --footer-foreground:#9BABBA;
+  --placeholder-foreground:#535A6E80;
+  --footer-background:#1E1E1E;
   --footer-divider-background: #2C2C2C;
   --service-border: #E5E7EB;
   --progress-bar-background: #E9E9E9;

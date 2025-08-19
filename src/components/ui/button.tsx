@@ -50,17 +50,10 @@ function Button({
   const Comp = asChild ? Slot : "button"
   
   
-const handleClick= ()=>{
-  // document.body.style.overflow = 'hidden' 
-  // requestAnimationFrame( ()=>)
-  // requestAnimationFrame(()=> {
-  // })
-}
   return (
       <Comp
         data-slot="button"
         className={cn(buttonVariants({ variant, size, className }))}
-        onClick={()=>handleClick() }
         {...props}
       />
   )

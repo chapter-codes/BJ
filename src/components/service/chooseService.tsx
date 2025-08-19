@@ -23,16 +23,15 @@ function ChooseService({step, setStep, services}:ChooseService) {
     const handleNext = ()=>{
         setStep((prev)=> Math.min(prev + 1, 4))
         setStepCompleted(true)
+        window.scrollTo(0,0)
     }
     const handlePrevious = ()=>{
         setStep((prev)=> Math.max(prev - 1,  1))
         setStepCompleted(false)
     }
 
-    console.log('stepcom', stepCompleted)
-    console.log('step', step)
   return (
-    <div className='md:basis-2/3 text-foreground bg-white rounded-xl border border-service-border max-w-[731px] px-4 md:px-10 py-6 md:py-10'>
+    <div className=''>
         <h3 className='text-lg  font-semibold  capitalize'>choose your service</h3>
         <p className="text-base text-secondary-foreground mt-1 ">Select the type of registration service you need</p>
         
@@ -47,34 +46,12 @@ function ChooseService({step, setStep, services}:ChooseService) {
                         <p className="text-secondary-foreground texx-base mt-6 md:mt-2">{service.description}</p>
                     </div>
                     <div className="absolute md:relative top-2 md:top-0 right-2 md:right-0 flex justify-center  text-lg font-semibold bg-price-background border rounded-full px-4 py-2 md:min-w-[120px]">
-                    ₦{service.price}
+                        ₦{service.price}
                     </div>    
             </Link>
         )}
 
-        {
-          (services.length == 1)  &&  
-            <>
-                <h3 className="text-xl font-semibold capitalize mt-12">business type</h3>
-                <BusinessTypesSelect businessTypes={businessTypes} setStepCompleted={setStepCompleted} />
-                <div className="flex justify-between w-full mt-12">
-                    <Button 
-                        className={`w-32 md:w-52 border ${ step > 1 ? '': ' bg-disabled-btn border-disabled-btn-border'}`}
-                        disabled={step == 1}
-                        onClick={handlePrevious}
-                        >
-                            Previous
-                    </Button>
-                    <Button 
-                        className={`text-white min-w-32 md:w-50 ${ stepCompleted ? 'bg-background': ' bg-disabled-previous-btn'}`}
-                        disabled={!stepCompleted}
-                        onClick={handleNext}
-                        >
-                            Next
-                    </Button>
-                </div>
-            </>
-        }
+        { (services.length == 1)  &&  <BusinessTypesSelect businessTypes={businessTypes} setStepCompleted={setStepCompleted} /> }
 
     </div>
   )

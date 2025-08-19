@@ -12,10 +12,10 @@ function AppRoutes() {
           <Route element={<Home />} >
             <Route path='/' element={null}/>
             <Route path='/services' element={<Service fullServiceList/>} />
-            <Route path='/services/:service' element={<Service fullServiceList={false} />} />
           </Route>
-          <Route path='/services' element={<Service fullServiceList/>} />
           <Route path='/services/:service' element={<Service fullServiceList={false} />} />
+          <Route path='/services' element={<Service fullServiceList/>} />
+          <Route path='/test' element={<Test />} />
 
           {/* standalone routes */}
         </Routes>
@@ -24,3 +24,14 @@ function AppRoutes() {
 }
 
 export default AppRoutes
+
+
+
+function Test() {
+  return (
+    <div className='h-[130svh] w-full  bg-gray-500 '>
+      lorem500
+    </div>
+  )
+}
+

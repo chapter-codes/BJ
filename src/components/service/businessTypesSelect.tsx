@@ -17,7 +17,7 @@ export function BusinessTypesSelect({businessTypes, setStepCompleted}:BusinessTy
       <SelectTrigger className="h-12! w-full mt-8 text-secondary-foreground">
         <SelectValue placeholder="Select business type" className=" py-4!" />
       </SelectTrigger>
-      <SelectContent className="max-w-[340px]  ">
+      <SelectContent className="relative z-[3500] max-w-[340px]  ">
         <SelectGroup className="flex flex-col gap-2 text-secondary-foreground text-base max-w-[340px]  px-5! py-5">
           <SelectLabel className="hidden">Business types</SelectLabel>
             {businessTypes.map( type => 

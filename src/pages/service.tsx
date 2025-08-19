@@ -1,55 +1,62 @@
-import { useState } from "react"
-import { useNavigate, useParams } from "react-router"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router"
 import { AnimatePresence, motion } from "motion/react"
 
 
-import { backArrow, pageLogoDarkText } from "@/assets/images"
+import {  pageLogoDarkText } from "@/assets/images"
 import { servicesWithPrice } from "@/lib/data"
+import { Button } from "@/components/ui/button"
 
 import CustomDiv from "@/components/common/customDiv"
+import Backbutton from "@/components/service/backbutton"
 import ChooseService from "@/components/service/chooseService"
+import ServiceFormCard from "@/components/service/serviceFormCard"
 import Footer from "@/components/footer"
 
 import type {ServiceWithPrice} from '@/components/service/types'
 import PriceSummary from "@/components/service/priceSummary"
 import NeedHelp from "@/components/service/needHelp"
+import BusinessInformation from "@/components/service/businessInformation"
+import PersonalInformation from "@/components/service/personalInformation"
+import Review from "@/components/service/review"
 
 type ServiceProps ={
   fullServiceList:boolean
 }
 
 function Service( {fullServiceList}:ServiceProps) {
-  const navigate = useNavigate()
   const [step, setStep] = useState(1)
   const {service :servicePath} = useParams()
-  console.log(servicePath)
 
   const foundService = servicesWithPrice.find(service=>service.link === servicePath) as ServiceWithPrice
-  // {
-  //   title: "NGO/Church/Mosque Registration",
-  //   description: "Specialized registration services for non-profit organizations",
-  //   price: 30000,
-  //   link:'222'
-  // }
 
-  const handleClick = ()=>{
-    navigate(-1)
-    // setTimeout(()=>document.body.style.overflow = 'auto', 0)
-  }
+  useEffect(()=>{
+    requestAnimationFrame( ()=>document.body.scrollTo(0,0) )
+    console.log('done', window.scrollY)
+  }, [])
 
+  
+
+  const handleNext = ()=>{
+        setStep((prev)=> Math.min(prev + 1, 4))
+    }
+    const handlePrevious = ()=>{
+        setStep((prev)=> Math.max(prev - 1,  1))
+    }
 
   return (
     <AnimatePresence>
       <motion.div
-        initial={{y:'100%'}}
+        initial={{y:servicePath ? 0:'100%'}}
         animate={{ y:0 }}
         transition={{ duration:0.5, }}
         exit={{y:'100%', opacity:0.4}}
         className = {``}
+        id="service"
       >
         <div className=" bg-tertiary-background">
           <CustomDiv className="mb-0! pb-20">
-            <div id='sticky-header' className="sticky z-[4000] top-0 py-4 bg-tertiary-background pb-10">
+            <div id='sticky-header' className="sticky z-[3000] top-0 py-4 bg-tertiary-background pb-10">
               <div className="flex justify-between items-center w-full">
                 <h2 className="text-foreground text-xl font-semibold ">Get Started</h2>
                 <img src={pageLogoDarkText} alt="Beejaytech Logo." />
@@ -58,32 +65,58 @@ function Service( {fullServiceList}:ServiceProps) {
 
               <p className="text-base text-secondary-foreground my-4">Step {step} of 4</p>
               <div className="step w-full h-2.5 mt-2 bg-progress-bar-background rounded overflow-hidden">
-                {/* pro
-                gress bar */}
-                <div className={`bg-background h-full rounded transition-[width] duration-300  ${
-                  step==1? 'w-1/4' :
-                  step==2? 'w-2/4' :
-                  step==3? 'w-3/4' : 
-                  'w-full'
-                }`}>
+                {/* progress bar */}
+                <div 
+                  className={`bg-background h-full rounded transition-[width] duration-300  
+                    ${
+                      step==1? 'w-1/4' :
+                      step==2? 'w-2/4' :
+                      step==3? 'w-3/4' : 
+                      'w-full'
+                    }
+                  `}
+                >
                 </div>
               </div>
-
-              <button 
-                className="flex gap-1 items-center text-background bg-tertiary-background w-full mt-4" 
-                onClick={()=>handleClick()}
-                >
-                <img src={backArrow} alt="back button" className="w-5"/>
-                Back to Home
-              </button>    
+              <Backbutton />
+                 
             </div>
 
-            <div className="flex flex-col md:flex-row items-start md:justify-evenly gap-6">
-              <ChooseService  
-                services = {fullServiceList? servicesWithPrice :[foundService] } 
-                step={step} 
-                setStep={setStep} 
-              />
+            <div className="flex flex-col md:flex-row  md:justify-evenly gap-6">
+              <ServiceFormCard >
+                {step <=0 && 
+                    <ChooseService  
+                      services = {fullServiceList? servicesWithPrice :[foundService] } 
+                      step={step} 
+                      setStep={setStep} 
+                    />
+                }
+
+                {step == 1 &&
+                  // <BusinessInformation  />
+                  // <PersonalInformation />
+                  <Review />
+                }
+
+                 {!fullServiceList && 
+                    <div className="flex justify-between w-full mt-12">
+                        <Button 
+                            className={`w-32 md:w-52 border ${ step > 1 ? '': ' bg-disabled-btn border-disabled-btn-border'}`}
+                            disabled={step == 1}
+                            onClick={handlePrevious}
+                            >
+                                Previous
+                        </Button>
+                        <Button 
+                            className={`text-white min-w-32 md:w-50 ${ true ? 'bg-background': ' bg-disabled-previous-btn'}`}
+                            disabled={!true}
+                            onClick={handleNext}
+                            >
+                                Next
+                        </Button>
+                    </div>
+                  }
+              </ServiceFormCard>
               <div className="flex flex-col gap-4">
                 {!fullServiceList && <PriceSummary price={foundService.price} />}
                 <NeedHelp />
@@ -100,3 +133,4 @@ function Service( {fullServiceList}:ServiceProps) {
 }
 
 export default Service
+

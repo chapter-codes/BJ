@@ -9,7 +9,6 @@ function PriceSummary({price = 0}:PriceSummaryProps) {
 
     useEffect(()=>{
         const height = document.getElementById('sticky-header')?.getBoundingClientRect().height
-        console.log(height)
         setTopOffset(height? height : 0)
     })
 
