@@ -1,3 +1,4 @@
+import StepDescription from "./stepDescription";
 
 
 
@@ -12,9 +13,7 @@ const mainSummary={
 function Review() {
   return (
     <div className=''>
-        <h3 className='text-lg  font-semibold  capitalize'>Review & Submit</h3>
-        <p className="text-base text-secondary-foreground mt-1 ">Please review your information before submitting.</p>
-
+        <StepDescription heading={'Review & Submit'} description="Please review your information before submitting." />
         <div className="bg-tertiary-background text-secondary-foreground p-6 rounded-[10px] mt-10">
             <h4 className=' font-semibold'>Service Summary</h4>
             {
@@ -25,7 +24,7 @@ function Review() {
                             <h5 className='font-medium mb-1 capitalize'>{ index>0? group: null}</h5>
                             {/* <div className="flex"> */}
                                 {mainSummary[group].map((item) => (
-                                    <div className="flex justify-between w-full py-1.5">
+                                    <div className="flex justify-between w-full py-1.5" key={item}>
                                         <p key={item}>{item}</p>
                                         <p className="">*********</p>
                                     </div>

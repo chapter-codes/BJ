@@ -13,7 +13,7 @@ function PriceSummary({price = 0}:PriceSummaryProps) {
     })
 
   return (
-    <div className={`md:basis-1/3 grow w- max-w-[387px] bg-white border rounded-[20px] border-service-border px-16 md:px-10 py-10 md:`} style={{top:topOffset}}>
+    <div className={`md:basis-1/3 grow max-w-[387px] bg-white border rounded-[20px] border-service-border px-16 md:px-10 py-10 md:`} style={{top:topOffset}}>
         <h3 className="text-center text-xl font-semibold w-full pb-4 border-b">₦ Price Summary</h3>
         <div className="flex justify-between text-xl text-secondary-foreground font-semibold mt-4">
             <p className="">total</p>

@@ -11,13 +11,13 @@ function CountryStateLocalGovernmentArea() {
   
   return (
     <>  
-        <div className="flex gap-2 lg:gap-6" >
-            <div className="basis-1/2">
+        <div className="flex flex-col md:flex-row gap-2 lg:gap-6" >
+            <div className="md:basis-1/2">
                 <Label>Country</Label>
                 <SelectCountry country={country} setCountry={setCountry} />
 
             </div>
-            <div className="basis-1/2">
+            <div className="md:basis-1/2 mt-6 md:mt-0">
                 <Label htmlFor="state">State/county/council</Label>
                 <SelectState country={country}  className="w-full h-12! mt-1"/>
             </div>

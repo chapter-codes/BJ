@@ -7,13 +7,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useFormContext } from "@/context/FormContext" 
+
 type BusinessTypes = {
     businessTypes: string[]
     setStepCompleted: React.Dispatch<React.SetStateAction<boolean>>
 }
-export function BusinessTypesSelect({businessTypes, setStepCompleted}:BusinessTypes) {
+export default function BusinessTypesSelect({businessTypes, setStepCompleted}:BusinessTypes) {
+  const {dispatch} = useFormContext()
   return (
-    <Select onValueChange={()=>setStepCompleted(true)}>
+    <Select onValueChange={ (value)=> dispatch({type:'UPDATE_FIELD', field:'businessType', value}) }>
       <SelectTrigger className="h-12! w-full mt-8 text-secondary-foreground">
         <SelectValue placeholder="Select business type" className=" py-4!" />
       </SelectTrigger>

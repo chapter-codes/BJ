@@ -10,6 +10,7 @@ type Props = {
 }
 
 const LoadingContext = createContext< LoadingContextType | null>(null)
+
 export function LoadingContextProvider({children}:Props) {
     const [loading, setLoadingState] = useState<Loading>(true)
   return (

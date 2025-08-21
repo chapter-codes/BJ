@@ -6,8 +6,8 @@ export function useInstantScrollOnRouteChange() {
 
   useLayoutEffect(() => {
     const html = document.documentElement;
-    const prevBehavior = html.style.scrollBehavior;
-    console.log(prevBehavior)
+    // const prevBehavior = html.style.scrollBehavior;
+    // console.log(prevBehavior)
 
     // Disable smooth scrolling immediately
     html.style.scrollBehavior = "auto";
@@ -15,7 +15,7 @@ export function useInstantScrollOnRouteChange() {
     // Restore after two frames
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        html.style.scrollBehavior = prevBehavior || "smoo ";
+        html.style.scrollBehavior = 'smooth';
       });
     });
 

@@ -22,10 +22,7 @@ function Home() {
     const {pathname} = useLocation()
     const modalRef = useRef<HTMLDivElement | null>(null)
 
-    console.log(pathname)
     const isServicesPath =  pathname === "/services";
-    const isServicePath =  /^\/services\/[^/]+$/.test(pathname)
-    console.log(isServicesPath, isServicePath)
 
     useEffect(()=>{
         if(loading){
@@ -34,11 +31,6 @@ function Home() {
             window.document.body.style.overflow = 'auto'
         }
     }, [loading])
-
-    useEffect(()=>{
-        modalRef.current?.scrollTo(0,0)
-
-    },[isServicePath])
     
     return (
         <>
@@ -50,7 +42,7 @@ function Home() {
                 // transition={{duration: loading? 0 : 0.3, ease: 'easeOut'}}
                 // exit={{y:}}
                 className=''
-                >
+                >   
                     <Header />
                     <HeroSection />
                     <div className="w-full bg-tertiary-background py-10 lg:py-10">
@@ -76,22 +68,6 @@ function Home() {
                         >
                             <Outlet/>
                     </motion.div>
-
-                    {/*services/:service modal  */}
-                    {isServicePath && <motion.div
-                            className={`fixed top-0 left-0 w-screen h-dvh
-                                ${isServicePath
-                                    ? 'pointer-events-auto z-[3000]'
-                                    :'pointer-events-none z-[2000]'
-                                }
-                                overflow-auto ''
-                            `}
-                            data-lenis-prevent
-                            >
-                                <Outlet/>
-
-                        </motion.div>
-                    }
             </motion.div>
         </AnimatePresence>
         </>

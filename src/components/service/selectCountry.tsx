@@ -28,7 +28,7 @@ type SelectCountryProps = {
 export function SelectCountry ({country, setCountry}:SelectCountryProps) {
   const [open, setOpen] = React.useState(false)
   // const [value, setValue] = React.useState("")  
-  const [countries, _setCountries] = React.useState<string[]>(['England', 'Nigeria', 'Nothern Ireland', 'Scotland', 'Wales'])
+  const [countries, _setCountries] = React.useState<string[]>(['England', 'Nigeria', 'Northern Ireland', 'Scotland', 'Wales'])
   
 
 
